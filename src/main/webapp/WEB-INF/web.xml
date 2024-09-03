@@ -5,24 +5,14 @@
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-<display-name>Locadora</display-name>
+<display-name>leasing-system</display-name>
 <welcome-file-list>
-<welcome-file>index.html</welcome-file>
-<welcome-file>index.jsp</welcome-file>
-<welcome-file>index.htm</welcome-file>
-<welcome-file>default.html</welcome-file>
-<welcome-file>default.jsp</welcome-file>
-<welcome-file>default.htm</welcome-file>
+	<welcome-file>index.html</welcome-file>
+	<welcome-file>index.jsp</welcome-file>
+	<welcome-file>index.htm</welcome-file>
+	<welcome-file>default.html</welcome-file>
+	<welcome-file>default.jsp</welcome-file>
+	<welcome-file>default.htm</welcome-file>
 </welcome-file-list>
-
-    <servlet>
-        <servlet-name>locadora</servlet-name>
-        <servlet-class>com.locadora.LocadoraMain</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>locadora</servlet-name>
-        <url-pattern>/locadora</url-pattern>
-    </servlet-mapping>
 
 </web-app>
