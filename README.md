@@ -1,7 +1,7 @@
  <div align="center" text-align="center">
     <img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=gradient&text=LEASING%20SYSTEM&reversal=false">
    
-   <strong>The Leasing System is a software application designed to manage the leasing process for a rental company. It provides a user-friendly interface for both customers and administrators to handle various aspects of the leasing process, including creating and managing lease agreements..</strong>
+   <strong>The Leasing System is a software application designed to manage the leasing process for a rental vehicle company. It provides a user-friendly interface for both customers and administrators to handle various aspects of the leasing process, including creating and managing lease agreements..</strong>
 </div>
 
 <br>
