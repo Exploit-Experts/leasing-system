@@ -5,24 +5,16 @@
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-<display-name>leasing-system</display-name>
-<welcome-file-list>
-	<welcome-file>index.html</welcome-file>
-	<welcome-file>index.jsp</welcome-file>
-	<welcome-file>index.htm</welcome-file>
-	<welcome-file>default.html</welcome-file>
-	<welcome-file>default.jsp</welcome-file>
-	<welcome-file>default.htm</welcome-file>
-</welcome-file-list>
+    <display-name>leasing-system</display-name>
 
-	<servlet>
-        <servlet-name>HomeServlet</servlet-name>
-        <servlet-class>com.myapp.controller.HomeServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>HomeServlet</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+    </welcome-file-list>
 
 </web-app>
+

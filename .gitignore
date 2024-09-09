@@ -1,1 +1,12 @@
-/build/
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# Compiled class files
+bin/
+
+# Build directories
+build/
+target/
+
