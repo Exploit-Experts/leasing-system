@@ -33,7 +33,7 @@ public class Reserva {
     public Veiculo getVeiculo(){
         return veiculo;
     }
-    public void setVeiculo(){
+    public void setVeiculo(Veiculo veiculo){
         this.veiculo = veiculo;
     }
     public LocalDate getDataInicio() {
