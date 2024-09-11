@@ -1,4 +1,4 @@
-package main.com.locadora.models.entities;
+package main.java.com.locadora.models;
 
 public class Veiculo {
 	private String marca;
@@ -6,6 +6,7 @@ public class Veiculo {
 	private int ano;
 	private String cor;
 	private String placa;
+	private Boolean disponivel;
 	
 	public Veiculo(String marca, String modelo, int ano, String cor, String placa) {
 		this.marca = marca;
@@ -13,6 +14,7 @@ public class Veiculo {
 		this.ano = ano;
 		this.cor = cor;
 		this.placa = placa;
+		this.disponivel = true;
 	}
 	
 	public String getMarca() {
@@ -44,6 +46,12 @@ public class Veiculo {
 	}
 	public void setPlaca(String placa) {
 		this.placa = placa;
+	}
+	public Boolean getDisponivel() {
+		return disponivel;
+	}
+	public void setDisponivel(Boolean disponivel) {
+		this.disponivel = disponivel;
 	}
 	
 	
