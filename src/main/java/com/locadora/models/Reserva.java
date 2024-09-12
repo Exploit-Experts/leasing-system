@@ -1,26 +1,17 @@
-package main.com.locadora.models.entities;
+package com.locadora.models;
 import java.time.LocalDate;
 
 public class Reserva {
-    private int id;
     private Cliente cliente;
     private Veiculo veiculo;
     private LocalDate dataInicio;
     private LocalDate dataFim;
 
-    public Reserva(int id, Cliente cliente, Veiculo veiculo, LocalDate dataInicio, LocalDate dataFim) {
-        this.id = id;
+    public Reserva( Cliente cliente, Veiculo veiculo, LocalDate dataInicio, LocalDate dataFim) {
         this.cliente = cliente;
         this.veiculo = veiculo;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
-    }
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Cliente getCliente() {
@@ -42,7 +33,7 @@ public class Reserva {
     public void setDataInicio(LocalDate dataInicio) {
         this.dataInicio = dataInicio;
     }
-    public LocalDate getDataFim(LocalDate dataFim) {
+    public LocalDate getDataFim() {
         return dataFim;
     }
     public void setDataFim(LocalDate dataFim) {

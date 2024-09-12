@@ -1,4 +1,4 @@
-package main.com.locadora.models.entities;
+package com.locadora.models;
 
 public class Cliente {
 	String nome;
