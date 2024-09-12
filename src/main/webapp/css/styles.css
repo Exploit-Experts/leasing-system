@@ -1,0 +1,127 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+body{
+	background-color: #fdfdfd;
+}
+
+header{
+    gap: 16px;
+	color: #e7e7e7;
+    display: flex;
+    padding: 30px 2%;
+    text-align: center;
+    flex-direction: column;
+    background-color: #0695bd;
+}
+
+nav{
+    gap: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type=button]{
+	color: #e7e7e7;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+	padding: 10px 12px;
+    background: #00b8eb;
+    border: 1px solid #00b8eb;
+}
+
+input[type=button]:hover{
+	background: #06c9ff;
+}
+
+.container{
+	padding: 20px 2%;
+	margin: 0 auto;	
+	max-width: 1366px;
+}
+	
+.container-form, .container-table{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.container-form form{
+	gap: 14px;
+	display: flex;
+	flex-direction: column;
+}
+
+.form-styles{
+    width: 50%;
+    padding: 15px;
+    color: white;
+    background-color: #0695bd;
+}
+	
+.input-group{
+	gap: 4px;
+	display: flex;
+	flex-direction: column;	
+}
+	
+.form-styles 
+input[type=text], input[type=email], 
+input[type=submit], input[type=date]{
+	width: 100%;
+	border: none;
+	padding: 10px;
+	border-radius: 6px;
+}
+
+.form-styles input[type=submit]{
+	cursor: pointer;
+	color: #e7e7e7;
+	background-color: #01a1b9;
+}
+
+.form-styles input[type=submit]:hover{
+	background-color: #0bbbd5;
+}
+
+.table {
+  width: 50%;
+  color: #212529;
+  margin: 1rem 0;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+.table .table {
+  background-color: #f8f9fa;
+}
+
+.table-sm th,
+.table-sm td {
+  padding: 0.3rem;
+}
+
+
+
+

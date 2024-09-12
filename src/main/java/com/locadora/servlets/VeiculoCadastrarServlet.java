@@ -31,7 +31,7 @@ public class VeiculoCadastrarServlet extends HttpServlet {
         Veiculo veiculo = new Veiculo(marca, modelo, ano, cor, placa);
         VeiculoRepository.adicionarVeiculo(veiculo);
 
-        response.sendRedirect(request.getContextPath() + "/index.jsp");
+        response.sendRedirect(request.getContextPath() + "/verVeiculos");
     }
 }
 

@@ -53,6 +53,6 @@ public class ClienteCadastroServlet extends HttpServlet {
         }
 
         
-        response.sendRedirect(request.getContextPath() + "/index.jsp");
+        response.sendRedirect(request.getContextPath() + "/verReservas");
     }
 }

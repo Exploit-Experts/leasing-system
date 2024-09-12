@@ -3,24 +3,28 @@
 <html>
 <head>
     <title>Página Inicial</title>
+    <link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1>Bem-vindo à Locadora</h1>
-    
-    <form action="${pageContext.request.contextPath}/cadastrarVeiculo" method="get">
-        <input type="submit" value="Adicionar Veículo">
-    </form>
-    
-    <form action="${pageContext.request.contextPath}/verVeiculos" method="get">
-        <input type="submit" value="Ver Todos os Veículos">
-    </form>
-    
-    <form action="${pageContext.request.contextPath}/cadastrarCliente" method="get">
-        <input type="submit" value="Alugar Veículo">
-    </form>
-    
-    <form action="${pageContext.request.contextPath}/verReservas" method="get">
-        <input type="submit" value="Ver Reservas">
-    </form>
+	<header>
+	    <h1>Bem-vindo à Locadora</h1>
+		<nav>
+			<a href="./cadastrarVeiculo">
+		    	<input type="button" value="Adicionar Veículo">
+		   	</a>
+		   	
+		  	<a href="./verVeiculos">
+		    	<input type="button" value="Ver Todos os Veículos">
+		   	</a>
+		   	
+		   	<a href="./cadastrarCliente">
+		    	<input type="button" value="Alugar Veículo">
+		   	</a>
+		   	
+		   	<a href="./verReservas">
+		    	<input type="button" value="Ver Reservas">
+		   	</a>
+		</nav>
+	</header>
 </body>
 </html>
