@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="main.java.com.locadora.models.Veiculo" %>
+<%@ page import="javax.servlet.ServletException" %>
+<%@ page import= "javax.servlet.ServletException" %>
+<%@ page import= "javax.servlet.annotation.WebServlet" %>
+<%@ page import= "javax.servlet.http.HttpServlet" %>
+<%@ page import= "javax.servlet.http.HttpServletRequest" %>
+<%@ page import= "javax.servlet.http.HttpServletResponse" %>
 <!DOCTYPE html>
 <html>
 <head>

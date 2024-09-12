@@ -2,7 +2,6 @@ package main.java.com.locadora.servlets;
 
 import main.java.com.locadora.models.Cliente;
 import main.java.com.locadora.models.Veiculo;
-import main.java.com.locadora.repository.ClienteRepository;
 import main.java.com.locadora.repository.VeiculoRepository;
 
 import javax.servlet.ServletException;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.List;
 
 @WebServlet("/veiculoDisponivel")

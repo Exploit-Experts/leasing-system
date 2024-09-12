@@ -46,16 +46,16 @@ public class ClienteCadastroServlet extends HttpServlet {
         ClienteRepository.adicionarCliente(cliente);
 
         // Encontrar o veículo com a placa fornecida
-        Veiculo veiculo = VeiculoRepository.encontrarPorPlaca(placa);
+        Veiculo veiculo = VeiculoRepository.buscarPorPlaca(placa);
 
         if (veiculo != null && veiculo.getDisponivel()) {
             // Criar uma nova reserva
             Reserva reserva = new Reserva(cliente, veiculo, LocalDate.now(), dataDevolucao);
-            ReservaRepository.adicionarReserva(reserva);
+            ReservaRepository.adicionar(reserva);
 
             // Atualizar a disponibilidade do veículo
             veiculo.setDisponivel(false);
-            VeiculoRepository.atualizarVeiculo(veiculo);
+            VeiculoRepository.atualizarDisponibilidade(placa, false);
         }
 
         // Redirecionar para a página inicial (index.jsp)

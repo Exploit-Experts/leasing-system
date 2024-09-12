@@ -1,10 +1,8 @@
 package main.java.com.locadora.servlets;
 
 import main.java.com.locadora.models.Cliente;
-import main.java.com.locadora.models.Reserva;
 import main.java.com.locadora.models.Veiculo;
 import main.java.com.locadora.repository.ClienteRepository;
-import main.java.com.locadora.repository.ReservaRepository;
 import main.java.com.locadora.repository.VeiculoRepository;
 
 import javax.servlet.ServletException;
