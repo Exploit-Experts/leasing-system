@@ -16,13 +16,10 @@ public class VerVeiculosServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Obter a lista de todos os veículos do repositório
         List<Veiculo> veiculos = VeiculoRepository.listarTodos();
 
-        // Adicionar a lista de veículos como atributo da requisição
         request.setAttribute("veiculos", veiculos);
 
-        // Encaminhar para a página de visualização de veículos
         request.getRequestDispatcher("/WEB-INF/pages/verVeiculos.jsp").forward(request, response);
     }
 }

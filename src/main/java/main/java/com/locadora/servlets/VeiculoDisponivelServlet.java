@@ -18,25 +18,19 @@ public class VeiculoDisponivelServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Receber os dados do cliente do formulário
         String nome = request.getParameter("nome");
         String endereco = request.getParameter("endereco");
         String email = request.getParameter("email");
         String telefone = request.getParameter("telefone");
 
-        // Criar um novo cliente
         Cliente cliente = new Cliente(nome, endereco, email, telefone);
         
-        // Salvar o cliente na sessão
         request.getSession().setAttribute("cliente", cliente);
 
-        // Obter a lista de veículos disponíveis
         List<Veiculo> veiculos = VeiculoRepository.listarDisponiveis();
 
-        // Adicionar a lista de veículos como atributo da requisição
         request.setAttribute("veiculos", veiculos);
 
-        // Exibir o formulário para selecionar a data de devolução e listar os veículos disponíveis
         request.getRequestDispatcher("/WEB-INF/pages/veiculosDisponiveis.jsp").forward(request, response);
     }
 }

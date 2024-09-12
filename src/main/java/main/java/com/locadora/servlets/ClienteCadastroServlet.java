@@ -11,6 +11,7 @@ import main.java.com.locadora.models.Veiculo;
 import main.java.com.locadora.repository.ClienteRepository;
 import main.java.com.locadora.repository.ReservaRepository;
 import main.java.com.locadora.repository.VeiculoRepository;
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
@@ -21,19 +22,16 @@ public class ClienteCadastroServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Obter a lista de veículos disponíveis
-        List<Veiculo> veiculosDisponiveis = VeiculoRepository.listarDisponiveis();
         
-        // Adicionar a lista de veículos disponíveis como atributo da requisição
+    	List<Veiculo> veiculosDisponiveis = VeiculoRepository.listarDisponiveis();
+
         request.setAttribute("veiculos", veiculosDisponiveis);
         
-        // Exibir o formulário de cadastro de cliente e reserva
         request.getRequestDispatcher("/WEB-INF/pages/cadastrarCliente.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Receber os dados do cliente e reserva do formulário
         String nome = request.getParameter("nome");
         String endereco = request.getParameter("endereco");
         String email = request.getParameter("email");
@@ -41,24 +39,20 @@ public class ClienteCadastroServlet extends HttpServlet {
         String placa = request.getParameter("placa");
         LocalDate dataDevolucao = LocalDate.parse(request.getParameter("dataDevolucao"));
 
-        // Criar um novo cliente
         Cliente cliente = new Cliente(nome, endereco, email, telefone);
         ClienteRepository.adicionarCliente(cliente);
 
-        // Encontrar o veículo com a placa fornecida
         Veiculo veiculo = VeiculoRepository.buscarPorPlaca(placa);
-
-        if (veiculo != null && veiculo.getDisponivel()) {
-            // Criar uma nova reserva
+        if(veiculo != null && veiculo.getPlaca().equalsIgnoreCase(placa)) {
             Reserva reserva = new Reserva(cliente, veiculo, LocalDate.now(), dataDevolucao);
             ReservaRepository.adicionar(reserva);
-
-            // Atualizar a disponibilidade do veículo
-            veiculo.setDisponivel(false);
+            
+            System.out.println(reserva);
+            
             VeiculoRepository.atualizarDisponibilidade(placa, false);
         }
 
-        // Redirecionar para a página inicial (index.jsp)
+        
         response.sendRedirect(request.getContextPath() + "/index.jsp");
     }
 }
