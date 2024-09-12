@@ -1,8 +1,8 @@
-package main.java.com.locadora.servlets;
+package com.locadora.servlets;
 
-import main.java.com.locadora.models.Cliente;
-import main.java.com.locadora.models.Veiculo;
-import main.java.com.locadora.repository.VeiculoRepository;
+import com.locadora.models.Cliente;
+import com.locadora.models.Veiculo;
+import com.locadora.repository.VeiculoRepository;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

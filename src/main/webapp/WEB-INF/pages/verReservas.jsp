@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
-<%@ page import="main.java.com.locadora.models.Reserva" %>
-<%@ page import="main.java.com.locadora.models.Cliente" %>
-<%@ page import="main.java.com.locadora.models.Veiculo" %>
+<%@ page import="com.locadora.models.Reserva" %>
+<%@ page import="com.locadora.models.Cliente" %>
+<%@ page import="com.locadora.models.Veiculo" %>
 
 <!DOCTYPE html>
 <html>

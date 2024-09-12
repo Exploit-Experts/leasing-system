@@ -1,6 +1,6 @@
-package main.java.com.locadora.repository;
+package com.locadora.repository;
 
-import main.java.com.locadora.models.Reserva;
+import com.locadora.models.Reserva;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,16 +1,16 @@
-package main.java.com.locadora.servlets;
+package com.locadora.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import main.java.com.locadora.models.Cliente;
-import main.java.com.locadora.models.Reserva;
-import main.java.com.locadora.models.Veiculo;
-import main.java.com.locadora.repository.ClienteRepository;
-import main.java.com.locadora.repository.ReservaRepository;
-import main.java.com.locadora.repository.VeiculoRepository;
+import com.locadora.models.Cliente;
+import com.locadora.models.Reserva;
+import com.locadora.models.Veiculo;
+import com.locadora.repository.ClienteRepository;
+import com.locadora.repository.ReservaRepository;
+import com.locadora.repository.VeiculoRepository;
 
 import java.io.IOException;
 import java.time.LocalDate;

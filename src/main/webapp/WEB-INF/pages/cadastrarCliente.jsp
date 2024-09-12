@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
-<%@ page import="main.java.com.locadora.models.Veiculo" %>
+<%@ page import="com.locadora.models.Veiculo" %>
+<%@ page import="java.time.LocalDate" %>
+
 
 <!DOCTYPE html>
 <html>
@@ -27,7 +29,8 @@
         <input type="text" id="placa" name="placa" required><br><br>
         
         <label for="dataDevolucao">Data de Devolução:</label>
-        <input type="date" id="dataDevolucao" name="dataDevolucao" required><br><br>
+		<input type="date" id="dataDevolucao" name="dataDevolucao" required min="<%= LocalDate.now() %>"><br><br>
+        
         
         <input type="submit" value="Reservar Veículo">
     </form>

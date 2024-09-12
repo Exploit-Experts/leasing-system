@@ -1,6 +1,6 @@
-package main.java.com.locadora.repository;
+package com.locadora.repository;
 
-import main.java.com.locadora.models.Veiculo;
+import com.locadora.models.Veiculo;
 
 import java.util.ArrayList;
 import java.util.List;

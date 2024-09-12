@@ -1,4 +1,4 @@
-package main.java.com.locadora.models;
+package com.locadora.models;
 import java.time.LocalDate;
 
 public class Reserva {

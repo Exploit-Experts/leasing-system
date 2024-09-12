@@ -1,12 +1,12 @@
-package main.java.com.locadora.servlets;
+package com.locadora.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import main.java.com.locadora.models.Reserva;
-import main.java.com.locadora.repository.ReservaRepository;
+import com.locadora.models.Reserva;
+import com.locadora.repository.ReservaRepository;
 
 import java.io.IOException;
 import java.util.List;

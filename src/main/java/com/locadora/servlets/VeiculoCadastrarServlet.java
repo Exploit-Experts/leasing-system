@@ -1,12 +1,12 @@
-package main.java.com.locadora.servlets;
+package com.locadora.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import main.java.com.locadora.models.Veiculo;
-import main.java.com.locadora.repository.VeiculoRepository;
+import com.locadora.models.Veiculo;
+import com.locadora.repository.VeiculoRepository;
 import java.io.IOException;
 
 @WebServlet("/cadastrarVeiculo")

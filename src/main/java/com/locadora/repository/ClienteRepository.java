@@ -1,9 +1,9 @@
-package main.java.com.locadora.repository;
+package com.locadora.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.com.locadora.models.Cliente;
+import com.locadora.models.Cliente;
 
 public class ClienteRepository {
 

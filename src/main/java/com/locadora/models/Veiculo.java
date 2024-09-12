@@ -1,4 +1,4 @@
-package main.java.com.locadora.models;
+package com.locadora.models;
 
 public class Veiculo {
 	private String marca;
