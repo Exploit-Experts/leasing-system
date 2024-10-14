@@ -1,17 +1,21 @@
 package com.locadora.models;
 
+
 import com.locadora.models.Veiculo;
 import com.locadora.models.Cliente;
 
 
+
 public class Alugar {
+	
+	
     private Cliente cliente;
 	private Veiculo veiculo;
 	
 	
 
 
-	public Alugar(Cliente cliente, Veiculo veiculo) {
+	public Alugar(Cliente cliente, Veiculo veiculo) {S
         this.veiculo = veiculo;
         this.cliente = cliente;
     }
@@ -32,8 +36,17 @@ public class Alugar {
         System.out.println("Placa: " + veiculo.getPlaca());
         System.out.println("Ano: " + veiculo.getAno());
         System.out.println("Cor: " + veiculo.getCor());
-        System.out.println("Diponivel: " + veiculo.getDisponivel());
+        
    
+	}
+	
+	
+	public void Veiculosdisponiveis() {
+		
+		System.out.println("Modelo: " + veiculo.getModelo());
+		System.out.println("Modelo: " + veiculo.getMarca());
+		System.out.println("Ano: " + veiculo.getAno());
+		
 	}
 	
 	public static void Aluguel(Boolean Queroalugar) {
@@ -54,6 +67,9 @@ public class Alugar {
 		
 	}
 	
-
+	
+	
+	
+	
 
 }

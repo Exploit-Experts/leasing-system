@@ -3,6 +3,7 @@
 <%@ page import="java.time.LocalDate" %>
 <%@ page import="com.locadora.models.Veiculo" %>
 <%@ page import="com.locadora.models.Cliente" %>
+<%@ page import="com.locadora.models.Alugar" %>
 
 <!DOCTYPE html>
 <html>
@@ -28,6 +29,10 @@
 		   	
 		   	<a href="./verReservas">
 		    	<input type="button" value="Ver Reservas">
+		   	</a>
+		   	
+		   		<a href="./AlugarVeiculo">
+		    	<input type="button" value="Alugar">
 		   	</a>
 		</nav>
 	</header>

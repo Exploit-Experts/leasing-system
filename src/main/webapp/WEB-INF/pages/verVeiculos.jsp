@@ -27,6 +27,10 @@
 		   	<a href="./verReservas">
 		    	<input type="button" value="Ver Reservas">
 		   	</a>
+		   	
+		   	<a href="./AlugarVeiculo">
+		    	<input type="button" value="Alugar">
+		   	</a>
 		</nav>
 	</header>
 	<section class="container">
