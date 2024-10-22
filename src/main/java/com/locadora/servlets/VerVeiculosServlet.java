@@ -19,7 +19,19 @@ public class VerVeiculosServlet extends HttpServlet {
         List<Veiculo> veiculos = VeiculoRepository.listarTodos();
 
         request.setAttribute("veiculos", veiculos);
-
-        request.getRequestDispatcher("/WEB-INF/pages/verVeiculos.jsp").forward(request, response);
+        
+ String destino = request.getParameter("destino");
+        
+    
+ if ("alugar".equals(destino)) {
+            request.getRequestDispatcher("/WEB-INF/pages/alugarVeiculo.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("/WEB-INF/pages/verVeiculos.jsp").forward(request, response);
+        }
     }
+
+        
 }
+
+    
+  

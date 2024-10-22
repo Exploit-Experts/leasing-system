@@ -13,6 +13,10 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 
+	public Cliente(String nomeCliente) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getNome() {
 		return nome;
 	}

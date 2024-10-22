@@ -53,6 +53,11 @@ public class Veiculo {
 	public void setDisponivel(Boolean disponivel) {
 		this.disponivel = disponivel;
 	}
+
+	public void setClienteAtual(Cliente cliente) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }

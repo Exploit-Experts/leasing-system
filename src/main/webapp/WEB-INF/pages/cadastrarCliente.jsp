@@ -22,14 +22,20 @@
 		    	<input type="button" value="Ver Todos os Veículos">
 		   	</a>
 		   	
-		   	<a href="./cadastrarCliente">
+	
+           <a href="./alugarVeiculo">
+		   	
 		    	<input type="button" value="Alugar Veículo">
 		   	</a>
-		   	
+ 
+   	
 		   	<a href="./verReservas">
 		    	<input type="button" value="Ver Reservas">
 		   	</a>
+		   	
+		  
 		</nav>
+		
 	</header>
 	
 	<section class="container">
@@ -66,7 +72,9 @@
 					<input type="date" id="dataDevolucao" name="dataDevolucao" required min="<%= LocalDate.now() %>">
 		        </div>
 		        
-		        <input type="submit" value="Reservar Veículo">
+		      <a href= "">
+		  <input type="submit" value="Reservar Veículo">
+		  </a>
 		    </form>
 		</div>
 		    
