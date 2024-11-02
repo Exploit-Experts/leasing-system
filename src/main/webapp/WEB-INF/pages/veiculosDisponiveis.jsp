@@ -28,6 +28,10 @@
 		   	<a href="./verReservas">
 		    	<input type="button" value="Ver Reservas">
 		   	</a>
+		   	
+		   	  <a href="./telaInicial.html">
+		    	 <input type="button" value="Tela Inicial">
+			   </a>
 		</nav>
 	</header>
 	<section class="container">

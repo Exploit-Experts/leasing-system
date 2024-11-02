@@ -36,6 +36,10 @@
 		   	<a href="./verReservas">
 		    	<input type="button" value="Ver Reservas">
 		   	</a>
+		   	
+		   	  <a href="./telaInicial.html">
+		    	 <input type="button" value="Tela Inicial">
+			   </a>
 		</nav>
 	</header>
 
@@ -111,23 +115,22 @@
 <form action="<%= request.getContextPath() %>/doPost4" method="post">
     <h3>Escolha o método de pagamento:</h3>
     
-    <!-- Campo para pagamento com Cartão (Débito) -->
+  
     <label for="cartao">Cartão (Débito):</label>
     <input type="text" name="Cartao" id="cartao" placeholder="Digite o número do cartão"><br>
 
-    <!-- Campo para pagamento via Pix -->
     <label for="pix">Pix:</label>
     <input type="text" name="Pix" id="pix" placeholder="Digite a chave Pix"><br>
 
-    <!-- Campo para pagamento com Débito -->
+    
     <label for="debito">Débito:</label>
     <input type="text" name="Debito" id="debito" placeholder="Digite o número do cartão de débito"><br>
 
-    <!-- Campo para pagamento em Dinheiro -->
+   
     <label for="dinheiro">Dinheiro:</label>
     <input type="text" name="Dinheiro" id="dinheiro" placeholder="Digite o valor em dinheiro"><br>
     
-    <!-- Botão para submeter o formulário -->
+    
     <button type="submit">Confirmar Pagamento</button>
 </form>
 
