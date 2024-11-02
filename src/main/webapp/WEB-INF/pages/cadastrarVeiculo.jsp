@@ -25,8 +25,8 @@
 		    	<input type="button" value="Ver Reservas">
 		    	
 		   	</a>
-		   	 <a href="./index.jsp">
-		    	 <input type="button" value="Tela inicial">
+		   	 <a href="./Menu.html">
+		    	 <input type="button" value="Menu">
 			   </a>
 		</nav>
 	</header>

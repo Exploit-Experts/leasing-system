@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Página Inicial</title>
+
+<link href="stylesheet" href="./css/TelaInicial.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo à Locadora Lieasing System</h1>
+        <nav>
+            <ul>          
+                <li><a href="/">Sobre</a></li>
+                <li><a href="/">Contato</a></li>
+                <li><a href="./sobreNos.html">Quem Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h2>Escolha o melhor veículo de acordo com sua necessidade</h2>
+            <p>Explore nossa vasta coleção de carros. Alugue online com facilidade e conveniência.</p>
+            <a href="#" class="btn">Veja nossos carros</a>
+        </div>
+    </div>
+</body>
+</html>
+   
+
+
+	<div class="carrossel">
+    <!-- Imagens do carrossel -->
+    <img src="imagens/corsa.jpg" alt="Corsa" class="active">
+    <img src="imagens/Bugatti_Veyron.jpg" alt="Bugatti Veyron">
+    <img src="imagens/Lamborguine.png" alt="Lamborghini">
+    <img src="imagens/Ferrari.png" alt="Ferrari">
+    <img src="imagens/fiat Uno.jpg" alt="Fiat Uno">
+    <img src="imagens/Fox.png" alt="Fox">
+    <img src="imagens/crossfox.png" alt="Crossfox">
+    <img src="imagens/S10.png" alt="S10">
+    <img src="imagens/Spin.jpg" alt="Spin">
+    <img src="imagens/Corola.png" alt="Corolla">
+    <img src="imagens/Civic.jpg" alt="Civic">
+    
+    <!-- Nome do carro -->
+    <div class="nome-carro" id="nomeCarro">Corsa</div>
+
+    <!-- Setas de navegação -->
+    <div class="setas">
+        <button class="seta" id="prev">← Anterior</button>
+        <button class="seta" id="next">Próximo →</button>
+    </div>
+</div>
+    
+    <style>
+    
+     
+
+
+
+   .carrossel {
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            margin: 0 auto;
+        }
+        .carrossel img {
+            width: 100%;
+            border-radius: 10px;
+            display: none;
+        }
+        .carrossel img.active {
+            display: block;
+        }
+        .setas {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .seta {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .seta:focus {
+            outline: none;
+        }
+        
+        
+        .carrossel img.active {
+        display: block;
+    }
+        .carrossel .nome-carro {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        
+    }
+    
+   
+    
+    
+</style>    
+        
+    
+  <script> 
+    const carros = [
+        { img: "imagens/corsa.jpg", nome: "Corsa" },
+        { img: "imagens/Bugatti_Veyron.jpg", nome: "Bugatti Veyron" },
+        { img: "imagens/Lamborguine.png", nome: "Lamborghini" },
+        { img: "imagens/Ferrari.png", nome: "Ferrari" },
+        { img: "imagens/fiat Uno.jpg", nome: "Fiat Uno" },
+        { img: "imagens/Fox.png", nome: "Fox" },
+        { img: "imagens/crossfox.png", nome: "Crossfox" },
+        { img: "imagens/S10.png", nome: "S10" },
+        { img: "imagens/Spin.jpg", nome: "Spin" },
+        { img: "imagens/Corola.png", nome: "Corolla" },
+        { img: "imagens/Civic.jpg", nome: "Civic" }
+    ];
+
+    let currentIndex = 0;
+
+   
+    const imagens = document.querySelectorAll(".carrossel img");
+    const nomeCarro = document.getElementById("nomeCarro");
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+
+   
+    function atualizarCarrossel(index) {
+        imagens.forEach((img, i) => {
+            img.classList.toggle("active", i === index); 
+        });
+        nomeCarro.textContent = carros[index].nome; 
+    }
+
+   
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex === 0) ? carros.length - 1 : currentIndex - 1;
+        atualizarCarrossel(currentIndex);
+    });
+
+   
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex === carros.length - 1) ? 0 : currentIndex + 1;
+        atualizarCarrossel(currentIndex);
+    });
+</script>
+        
+        
+        
+</body>
+</html>

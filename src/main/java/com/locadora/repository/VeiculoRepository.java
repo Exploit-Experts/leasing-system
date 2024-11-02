@@ -43,4 +43,9 @@ public class VeiculoRepository{
 		return null;
 	}
 
+	public static List<Veiculo> getVeiculos() {
+		// TODO Auto-generated method stub
+		return veiculos;
+	}
+
 }

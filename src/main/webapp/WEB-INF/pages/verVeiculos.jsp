@@ -20,7 +20,7 @@
 		    	<input type="button" value="Ver Todos os Veículos">
 		   	</a>
 		   	
-		   	<a href="./cadastrarCliente">
+		   	<a href="./alugarVeiculo">
 		    	<input type="button" value="Alugar Veículo">
 		   	</a>
 		   	
