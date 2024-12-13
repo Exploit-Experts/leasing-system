@@ -1,23 +1,25 @@
 package com.leasing.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller(value = "/")
+@Controller
+@RequestMapping("/")
 public class indexController {
 
+    @GetMapping
     public String index() {
         return "index";
     }
 
-    @RequestMapping(value="store", method= RequestMethod.GET)
-    public String about() {
+    @GetMapping("store")
+    public String store() {
         return "store";
     }
 
-    @RequestMapping(value="register", method= RequestMethod.GET)
-    public String create() {
+    @GetMapping("register")
+    public String register() {
         return "register";
     }
-
 }
