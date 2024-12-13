@@ -14,18 +14,20 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/user/create")
-    public String createUser(@ModelAttribute Cliente cliente, Model model) {
+    public String createUser(Cliente cliente, Model model) {
         boolean userCreated = userService.createUser(cliente, model);
         if (userCreated) {
             return "redirect:/store";
         } else {
             return "register";
         }
-        
     }
 
     @PostMapping("/user/login")
-    public String loginUser(@RequestParam String email, @RequestParam String password, Model model) {
+    public String loginUser(
+            @RequestParam String email,
+            @RequestParam String password,
+            Model model) {
         boolean isUserFound = userService.loginUser(email, password);
         if (isUserFound) {
             return "redirect:/store";
@@ -34,4 +36,5 @@ public class UserController {
             return "index";
         }
     }
+
 }
