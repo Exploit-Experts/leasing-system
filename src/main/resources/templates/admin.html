@@ -8,24 +8,37 @@
 
     <link rel="stylesheet" href="/css/store.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
     <script src="/js/admin.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-name">
-                <h1>Leasing System</h1>
-            </div>
-            <div class="header-buttons">
-                <button id="dark-mode-toggle">Dark Mode</button>
-                <button id="language-toggle">Language</button>
-                <a href="/"><button id="return">Exit</button></a>
-            </div>
+    <div class="header-container">
+        <div class="logo-name">
+            <h1>Leasing System</h1>
         </div>
-    </header>
-    <main>
-    </main>
+        <div class="header-buttons">
+            <button id="dark-mode-toggle">Dark Mode</button>
+            <button id="language-toggle">Language</button>
+            <a href="/"><button id="return">Exit</button></a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="user-control">
+            <div class="header">
+                <h1>User Control</h1>
+                <p>Manage users here.</p>
+            </div>
+            <div class="user-list"></div>
+        </div>
+        <div class="car-control">
+            <div class="header">
+                <h1>Car Control</h1>
+                <p>Manage cars here.</p>
+            </div>
+            <div class="car-list"></div>
+        </div>
+    </div>
 </body>
 
 </html>
