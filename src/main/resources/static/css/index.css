@@ -108,7 +108,9 @@ form input[type="submit"]:hover {
     font-size: 0.8rem;
     text-align: center;
 }
-
+.footer .social-fields a{
+    text-decoration: none;
+}
 .footer .foooter {
     padding: 0.4rem;
     border-radius: 4px;
@@ -120,8 +122,10 @@ form input[type="submit"]:hover {
     display: flex;
     align-items: left;
     justify-content: left;
-    text-decoration: none; /* Ensure text decoration is removed */
+    text-decoration: none; 
 }
+
+
 
 .footer .foooter i {
     margin: 0 0.5rem;
