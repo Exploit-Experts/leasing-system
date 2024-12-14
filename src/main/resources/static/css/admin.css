@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(205, 24, 24, 0.5)) no-repeat, url('../images/background.jpg');
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+.header-container {
+  background: rgba(255, 255, 255, 0.93);
+  padding: 0.7rem 2rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-name {
+  display: flex;
+  align-items: center;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.header-buttons button {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to left, #4776E6, #ab8edc);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header-buttons button:hover {
+  background: linear-gradient(to right, #4776E6, #8e54e9);
+}
+
+.logo-name h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+main h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
