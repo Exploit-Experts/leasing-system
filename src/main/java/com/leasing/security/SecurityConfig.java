@@ -15,8 +15,12 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests((requests) -> requests
-                .requestMatchers("/", "/register", "/user/create", "/css/**", "/js/**", "/images/**", "/h2-console/**").permitAll()
-                .requestMatchers("/admin/**").hasRole("ADMIN")
+                .requestMatchers("/", "/register", "/user/create", 
+                               "/css/**", "/js/**", "/images/**", 
+                               "/h2-console/**", 
+                               "/admin/**",       
+                               "/api/**")           
+                .permitAll()
                 .anyRequest().authenticated()
             )
             .formLogin((form) -> form

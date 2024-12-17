@@ -104,3 +104,214 @@ body {
   width: 100%;
   margin-bottom: 1rem;
 }
+
+.user-list .list-item, .car-list .list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.item-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-btn, .delete-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-btn {
+  background: linear-gradient(to left, #4776E6, #8e54e9);
+  color: white;
+}
+
+.delete-btn {
+  background: linear-gradient(to left, #ff4b4b, #ff416c);
+  color: white;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.empty-message {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+.empty-message p {
+  margin: 0;
+}
+
+.add-car-form {
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 2px solid #eee;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.form-row input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.add-btn {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to left, #2ecc71, #27ae60);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.add-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Criar grupos de label-value */
+.info-label-group {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-right: 1rem;
+}
+
+.info-label,
+.info-value {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.info-label {
+    border-radius: 20px 0 0 20px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(to right, #4776E6, #8e54e9);
+}
+
+.info-value {
+    border-radius: 0 20px 20px 0;
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: none;
+    margin-left: -1px; /* Para sobrepor levemente a borda */
+}
+
+.info-value.editing {
+    background: white;
+    border: 2px solid #4776E6;
+    padding: 0.2rem 0.7rem;
+    outline: none;
+    min-width: 100px;
+}
+
+.edit-actions {
+    display: none;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+
+.edit-actions.active {
+    display: flex;
+}
+
+.save-btn {
+    background: #2ecc71;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.cancel-btn {
+    background: #95a5a6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+button:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+button:active::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+      transform: scale(0, 0);
+      opacity: 0.5;
+  }
+  100% {
+      transform: scale(100, 100);
+      opacity: 0;
+  }
+}
+
+.info-label.status-disponivel {
+    background: linear-gradient(to right, #27ae60, #2ecc71);
+}
+
+.info-label.status-indisponivel {
+    background: linear-gradient(to right, #c0392b, #e74c3c);
+}
