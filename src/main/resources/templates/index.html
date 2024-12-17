@@ -14,19 +14,19 @@
     <main class="container">
         <h1 style="align-items: center; align-content: center">Leasing System</h1>
         <h2>Login</h2>
-        <form action="/user/login" method="post">
+        <form action="/login" method="post">
             <div class="input-field">
-                <input type="email" name="email" id="email" placeholder="Enter Your Email" class="input-field">
+                <input type="email" name="email" id="email" placeholder="Enter Your Email" class="input-field" required>
             </div>
             <div class="input-field">
                 <input type="password" name="password" id="password" placeholder="Enter Your Password"
-                    class="input-field">
+                    class="input-field" required>
             </div>
 
             <input type="submit" value="Entrar">
         </form>
-        <div th:if="${errorMessage != null}" class="error-message">
-            <span th:text="${errorMessage}"></span>
+        <div th:if="${param.error}" class="error-message">
+            <span>Email ou senha incorretos.</span>
         </div>
 
         <div class="footer">
