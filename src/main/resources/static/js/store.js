@@ -1,14 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+
     document.getElementById('dark-mode-toggle').addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('dark-mode', 'enabled');
+        } else {
+            localStorage.setItem('dark-mode', 'disabled');
+        }
     });
 
     document.getElementById('language-toggle').addEventListener('click', function() {
-        // Language toggle functionality
     });
 
     document.getElementById('user-button').addEventListener('click', function() {
-        // User button functionality
     });
 
     const carousel = {
@@ -41,6 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
         reservationForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
+            const dataInicio = new Date(formData.get('dataInicio'));
+            const dataFim = new Date(formData.get('dataFim'));
+
+            if (dataInicio > dataFim) {
+                alert('A data de início não pode ser posterior à data de fim.');
+                return;
+            }
+
             const reservationData = {
                 veiculo: { placa: formData.get('placa') },
                 dataInicio: formData.get('dataInicio'),
@@ -67,4 +83,26 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    document.querySelectorAll('.return-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const reservaId = this.getAttribute('data-reserva-id');
+            if (confirm('Tem certeza que deseja devolver este veículo?')) {
+                fetch(`/api/reserva/${reservaId}/return`, {
+                    method: 'POST'
+                })
+                .then(response => response.text())
+                .then(message => {
+                    alert(message);
+                    if (message.includes('sucesso')) {
+                        location.reload();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Erro ao devolver o veículo');
+                });
+            }
+        });
+    });
 });

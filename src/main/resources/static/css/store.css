@@ -370,3 +370,27 @@ body.dark-mode .carousel-caption {
     background: linear-gradient(to right, #4776E6, #8e54e9);
     transform: translateY(-2px);
 }
+
+.return-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: linear-gradient(to left, #e74c3c, #c0392b);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.return-btn:hover {
+    background: linear-gradient(to right, #e74c3c, #c0392b);
+    transform: translateY(-2px);
+}
+
+body.dark-mode .return-btn {
+    background: linear-gradient(to left, #c0392b, #922b21);
+}
+
+body.dark-mode .return-btn:hover {
+    background: linear-gradient(to right, #c0392b, #922b21);
+}

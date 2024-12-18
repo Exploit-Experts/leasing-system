@@ -119,6 +119,9 @@
                                 <span class="info-value" th:text="${#temporals.format(reserva.dataFim, 'dd/MM/yyyy')}">Fim</span>
                             </div>
                         </div>
+                        <button class="return-btn" th:data-reserva-id="${reserva.id}">
+                            <i class="bi bi-arrow-return-left"></i> Devolver Veículo
+                        </button>
                     </div>
                 </div>
                 <div th:if="${user == null}">
