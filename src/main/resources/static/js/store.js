@@ -17,6 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById('user-button').addEventListener('click', function() {
+        document.getElementById('user-popup').style.display = 'block';
+    });
+
+    document.querySelector('.close-btn').addEventListener('click', function() {
+        document.getElementById('user-popup').style.display = 'none';
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', function() {
+        window.location.href = '/user/logout';
     });
 
     const carousel = {
@@ -39,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    setInterval(() => carousel.next(), 5000);
+    setInterval(() => carousel.next(), 4000);
 
     document.querySelector('.carousel-control.prev').addEventListener('click', () => carousel.prev());
     document.querySelector('.carousel-control.next').addEventListener('click', () => carousel.next());

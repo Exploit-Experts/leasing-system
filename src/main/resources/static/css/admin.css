@@ -21,7 +21,7 @@ body {
 }
 
 body.dark-mode {
-  background: linear-gradient(45deg, rgba(34, 34, 34, 0.9), rgba(0, 0, 0, 0.9)) no-repeat, url('../images/background-dark.jpg');
+  background: linear-gradient(45deg, rgba(34, 34, 34, 0.9), rgba(0, 0, 0, 0.9)) no-repeat, url('../images/background.jpg');
   color: #f0f0f0;
 }
 

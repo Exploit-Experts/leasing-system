@@ -152,17 +152,23 @@ function handleDelete(id, type) {
         if (response.ok) {
           location.reload();
         } else {
-          return response.json().then(data => {
-            if (data.error && data.error.includes('active reservations')) {
-              if (type === 'user') {
-                document.getElementById('user-reservation-error').style.display = 'block';
+          return response.text().then(text => {
+            try {
+              const data = JSON.parse(text);
+              if (data.error && data.error.includes('active reservations')) {
+                if (type === 'user') {
+                  document.getElementById('user-reservation-error').style.display = 'block';
+                } else {
+                  document.getElementById('car-reservation-error').style.display = 'block';
+                }
               } else {
-                document.getElementById('car-reservation-error').style.display = 'block';
+                alert('Error deleting item: ' + (data.message || data.error || 'Unknown error'));
               }
-            } else {
-              alert('Error deleting item: ' + (data.message || data.error || 'Unknown error'));
+              throw new Error(data.message || data.error || 'Unknown error');
+            } catch (e) {
+              alert('Error deleting item: ' + text);
+              throw new Error(text);
             }
-            throw new Error(data.message || data.error || 'Unknown error');
           });
         }
       })
@@ -170,8 +176,6 @@ function handleDelete(id, type) {
         console.error('Error:', error);
         if (error.message === 'Failed to fetch') {
           alert('Network error: Failed to connect to the server.');
-        } else {
-          alert('Error deleting item: ' + error.message);
         }
       });
   }

@@ -149,6 +149,32 @@
             </form>
         </section>
     </main>
+    <div id="user-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Informações do Usuário</h2>
+            <div class="info-bubble">
+                <span class="info-label">Nome:</span>
+                <span class="info-value" th:text="${user.name}">Nome do Usuário</span>
+            </div>
+            <div class="info-bubble">
+                <span class="info-label">Email:</span>
+                <span class="info-value" th:text="${user.email}">Email do Usuário</span>
+            </div>
+            <div class="info-bubble">
+                <span class="info-label">Telefone:</span>
+                <span class="info-value" th:text="${user.phone}">Telefone do Usuário</span>
+            </div>
+            <div class="button-group">
+                <form th:action="@{/api/user/{email}(email=${user.email})}" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <button type="submit" class="delete-btn"><i class="bi bi-trash"></i> Deletar Conta</button>
+                </form>
+                <button id="logout-btn" class="logout-btn"><i class="bi bi-box-arrow-right"></i> Sair</button>
+                <a href="https://github.com/brunoliratm/leasing-system" target="_blank" class="github-btn"><i class="bi bi-github"></i> leasing-system 2.0.0</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
