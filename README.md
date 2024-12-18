@@ -32,7 +32,7 @@
 <br>
 
 ## Roadmap
-- [] Implement the Language Toggle feature.
+- [ ] Implement the Language Toggle feature.
 
 <br>
 
@@ -40,15 +40,15 @@
 
 ### Customer Portal
 
-![Customer Portal]()
+![Customer Portal](https://github.com/Exploit-Experts/leasing-system/blob/LS-20/images/customer-page.png?raw=true)
 
 ### Administrator Dashboard
 
-![Administrator Dashboard]()
+![Administrator Dashboard](https://github.com/Exploit-Experts/leasing-system/blob/LS-20/images/admin-page.png?raw=true)
 
 ### Authentication
 
-![Authentication]()
+![Authentication](https://github.com/Exploit-Experts/leasing-system/blob/LS-20/images/login-page.png?raw=true)
 
 ## Installation
 
