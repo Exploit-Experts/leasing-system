@@ -42,21 +42,21 @@
 <details>
 <summary>Customer Portal</summary>
 
-![Customer Portal](https://github.com/Exploit-Experts/leasing-system/blob/LS-20/images/customer-page.png?raw=true)
+![Customer Portal](https://github.com/Exploit-Experts/leasing-system/blob/master/images/customer-page.png?raw=true)
 
 </details>
 
 <details>
 <summary>Administrator Dashboard</summary>
 
-![Administrator Dashboard](https://github.com/Exploit-Experts/leasing-system/blob/LS-20/images/admin-page.png?raw=true)
+![Administrator Dashboard](https://github.com/Exploit-Experts/leasing-system/blob/master/images/admin-page.png?raw=true)
 
 </details>
 
 <details>
 <summary>Authentication</summary>
 
-![Authentication](https://github.com/Exploit-Experts/leasing-system/blob/LS-20/images/login-page.png?raw=true)
+![Authentication](https://github.com/Exploit-Experts/leasing-system/blob/master/images/login-page.png?raw=true)
 
 </details>
 
