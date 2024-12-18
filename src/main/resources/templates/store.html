@@ -19,14 +19,132 @@
                 <h1>Leasing System</h1>
             </div>
             <div class="header-buttons">
-                <button id="dark-mode-toggle">Dark Mode</button>
-                <button id="language-toggle">Language</button>
-                <button id="user-button">User</button>
+                <button id="dark-mode-toggle"><i class="bi bi-moon"></i> Dark Mode</button>
+                <button id="language-toggle"><i class="bi bi-translate"></i> Language</button>
+                <button id="user-button" style="background: linear-gradient(to left, #ff4b4b, #ff416c);"><i class="bi bi-person"></i> User</button>
             </div>
         </div>
     </header>
     <main>
-        
+        <section class="welcome-section">
+            <h1>Bem-vindo, <span th:text="${user != null ? user.name : 'Visitante'}">Usuário</span>!</h1>
+        </section>
+
+        <section class="carousel-section">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/images/car1.jpg" alt="Carros Premium">
+                        <div class="carousel-caption">
+                            <h2>Premium</h2>
+                            <p>Veículos de luxo para momentos especiais</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/images/car2.jpg" alt="Preços Baixos">
+                        <div class="carousel-caption">
+                            <h2>Economia</h2>
+                            <p>Preços abaixo do mercado</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/images/car3.jpg" alt="Qualidade">
+                        <div class="carousel-caption">
+                            <h2>Qualidade</h2>
+                            <p>Veículos revisados e seguros</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control prev">&lt;</button>
+                <button class="carousel-control next">&gt;</button>
+            </div>
+        </section>
+
+        <section class="available-cars">
+            <div class="header">
+                <h2>Veículos Disponíveis</h2>
+                <p>Confira nossos veículos disponíveis abaixo:</p>
+            </div>
+            <div class="car-grid">
+                <div th:each="car : ${cars}" th:if="${car.disponivel}" class="car-card">
+                    <div class="car-info">
+                        <h3 th:text="${car.marca + ' ' + car.modelo}">Marca Modelo</h3>
+                        <div class="car-details">
+                            <div class="info-label-group">
+                                <span class="info-label">Ano:</span>
+                                <span class="info-value" th:text="${car.ano}">Ano</span>
+                            </div>
+                            <div class="info-label-group">
+                                <span class="info-label">Cor:</span>
+                                <span class="info-value" th:text="${car.cor}">Cor</span>
+                            </div>
+                            <div class="info-label-group">
+                                <span class="info-label">Placa:</span>
+                                <span class="info-value" th:text="${car.placa}">Placa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rented-cars">
+            <div class="header">
+                <h2>Veículos Alugados</h2>
+                <p>Seus veículos alugados abaixo:</p>
+            </div>
+            <div class="car-grid">
+                <div th:if="${user != null}" th:each="reserva : ${user.reservas}" class="car-card">
+                    <div class="car-info">
+                        <h3 th:text="${reserva.veiculo.marca + ' ' + reserva.veiculo.modelo}">Marca Modelo</h3>
+                        <div class="car-details">
+                            <div class="info-label-group">
+                                <span class="info-label">Ano:</span>
+                                <span class="info-value" th:text="${reserva.veiculo.ano}">Ano</span>
+                            </div>
+                            <div class="info-label-group">
+                                <span class="info-label">Cor:</span>
+                                <span class="info-value" th:text="${reserva.veiculo.cor}">Cor</span>
+                            </div>
+                            <div class="info-label-group">
+                                <span class="info-label">Placa:</span>
+                                <span class="info-value" th:text="${reserva.veiculo.placa}">Placa</span>
+                            </div>
+                            <div class="info-label-group">
+                                <span class="info-label" style="background: linear-gradient(to left, #2ecc71, #27ae60) !important;" >Início:</span>
+                                <span class="info-value" th:text="${#temporals.format(reserva.dataInicio, 'dd/MM/yyyy')}">Início</span>
+                            </div>
+                            <div class="info-label-group">
+                                <span class="info-label" style="background: linear-gradient(to left, #2ecc71, #27ae60) !important;">Fim:</span>
+                                <span class="info-value" th:text="${#temporals.format(reserva.dataFim, 'dd/MM/yyyy')}">Fim</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div th:if="${user == null}">
+                    <p>Nenhum veículo alugado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reservation-form">
+            <h2>Fazer Reserva</h2>
+            <form id="reservationForm">
+                <div class="form-group">
+                    <input type="text" id="placa" name="placa" placeholder="Placa do Veículo" required>
+                    <label for="placa">Placa do Veículo</label>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="dataInicio" name="dataInicio" required>
+                    <label for="dataInicio">Data de Início</label>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="dataFim" name="dataFim" required>
+                    <label for="dataFim">Data de Fim</label>
+                </div>
+                <button type="submit" class="submit-btn">Reservar</button>
+            </form>
+        </section>
     </main>
 </body>
 

@@ -52,13 +52,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
   }
+
+  document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+  });
+
 });
 
 function handleEdit(id, type) {
   if (type === 'car') {
     const row = document.querySelector(`.info-row[data-car-id="${id}"]`);
     const editActions = row.querySelector('.edit-actions');
-    const values = row.querySelectorAll('.info-value:not([data-field="disponivel"])');
+    const values = row.querySelectorAll('.info-value:not([data-field="disponivel"]):not([data-field="usuario"])');
     const originalValues = {};
 
     values.forEach(value => {
@@ -138,12 +143,27 @@ function handleDelete(id, type) {
         if (response.ok) {
           location.reload();
         } else {
-          alert('Error deleting item');
+          return response.json().then(data => {
+            if (data.error && data.error.includes('active reservations')) {
+              if (type === 'user') {
+                document.getElementById('user-reservation-error').style.display = 'block';
+              } else {
+                document.getElementById('car-reservation-error').style.display = 'block';
+              }
+            } else {
+              alert('Error deleting item: ' + (data.message || data.error || 'Unknown error'));
+            }
+            throw new Error(data.message || data.error || 'Unknown error');
+          });
         }
       })
       .catch(error => {
         console.error('Error:', error);
-        alert('Error deleting item');
+        if (error.message === 'Failed to fetch') {
+          alert('Network error: Failed to connect to the server.');
+        } else {
+          alert('Error deleting item: ' + error.message);
+        }
       });
   }
 }

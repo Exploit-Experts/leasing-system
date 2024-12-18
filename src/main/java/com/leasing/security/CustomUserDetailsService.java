@@ -1,7 +1,7 @@
 package com.leasing.security;
 
 import com.leasing.models.Cliente;
-import com.leasing.repository.UserRepository;
+import com.leasing.repository.ClienteRepository;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,9 +11,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final UserRepository userRepository;
+    private final ClienteRepository userRepository;
 
-    public CustomUserDetailsService(UserRepository userRepository) {
+    public CustomUserDetailsService(ClienteRepository userRepository) {
         this.userRepository = userRepository;
     }
 

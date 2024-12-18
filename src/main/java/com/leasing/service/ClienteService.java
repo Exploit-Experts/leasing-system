@@ -1,7 +1,7 @@
-package com.leasing.services;
+package com.leasing.service;
 
 import com.leasing.models.Cliente;
-import com.leasing.repository.UserRepository;
+import com.leasing.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -11,15 +11,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Service
-public class UserService {
+public class ClienteService {
 
     @Autowired
-    private UserRepository userRepository;
+    private ClienteRepository userRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+    private static final Logger logger = LoggerFactory.getLogger(ClienteService.class);
 
     public boolean createUser(Cliente cliente, Model model) {
         if (cliente.getEmail() == null || cliente.getEmail().isEmpty() ||

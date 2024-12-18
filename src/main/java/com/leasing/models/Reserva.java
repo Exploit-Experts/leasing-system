@@ -20,5 +20,4 @@ public class Reserva {
   private LocalDate dataInicio;
   @Column(nullable = false)
   private LocalDate dataFim;
-  
 }

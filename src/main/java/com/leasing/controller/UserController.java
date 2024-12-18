@@ -1,7 +1,8 @@
-package com.leasing.controllers;
+package com.leasing.controller;
 
 import com.leasing.models.Cliente;
-import com.leasing.services.UserService;
+import com.leasing.service.ClienteService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private ClienteService userService;
 
     @Autowired
     private PasswordEncoder passwordEncoder;

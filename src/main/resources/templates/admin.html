@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Leasing System - Sua loja de automóveis com os melhores preços">
     <title>Leasing Sys - Admin</title>
-
-    <link rel="stylesheet" href="/css/store.css">
+    <script src="/js/admin.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/css/admin.css">
-    <script src="/js/admin.js"></script>
 </head>
 
 <body>
@@ -18,9 +16,9 @@
             <h1>Leasing System</h1>
         </div>
         <div class="header-buttons">
-            <button id="dark-mode-toggle">Dark Mode</button>
-            <button id="language-toggle">Language</button>
-            <a href="/"><button id="return">Exit</button></a>
+            <button id="dark-mode-toggle"><i class="bi bi-moon"></i> Dark Mode</button>
+            <button id="language-toggle"><i class="bi bi-translate"></i> Language</button>
+            <a href="/"><button id="return" style="background: linear-gradient(to left, #ff4b4b, #ff416c);"><i class="bi bi-box-arrow-left"></i> Exit</button></a>
         </div>
     </div>
     <div class="main">
@@ -32,6 +30,12 @@
             <div class="user-list">
                 <div th:if="${#lists.isEmpty(users)}" class="empty-message">
                     <p>No users found</p>
+                </div>
+                <div class="error-message" id="user-delete-error" style="display: none;">
+                    <p>Error deleting user. Please try again.</p>
+                </div>
+                <div class="error-message" id="user-reservation-error" style="display: none;">
+                    <p>Cannot delete user. User has active reservations.</p>
                 </div>
                 <div class="list-item" th:if="${!#lists.isEmpty(users)}" th:each="user : ${users}">
                     <div class="item-info">
@@ -65,10 +69,16 @@
                         </button>
                     </div>
                 </form>
-                <div th:if="${#lists.isEmpty(cars)}" class="empty-message">
+                <div th:if="${#lists.isEmpty(cars)}" class="empty-message" style="margin-top: 0.5rem;">
                     <p>No cars found</p>
                 </div>
-                <div class="list-item" th:if="${!#lists.isEmpty(cars)}" th:each="car : ${cars}">
+                <div class="error-message" id="car-delete-error" style="display: none;">
+                    <p>Error deleting car. Please try again.</p>
+                </div>
+                <div class="error-message" id="car-reservation-error" style="display: none;">
+                    <p>Cannot delete car. Car has active reservations.</p>
+                </div>
+                <div class="list-item" th:if="${!#lists.isEmpty(cars)}" th:each="car : ${cars}" >
                     <div class="item-info">
                         <div class="info-row" th:data-car-id="${car.id}">
                             <div class="info-label-group">
@@ -94,6 +104,10 @@
                             <div class="info-label-group">
                                 <span class="info-label" th:classappend="${car.disponivel ? 'status-disponivel' : 'status-indisponivel'}">Status:</span>
                                 <span class="info-value" data-field="disponivel" th:text="${car.disponivel ? 'Disponível' : 'Indisponível'}">Status</span>
+                            </div>
+                            <div class="info-label-group" th:if="${!car.disponivel}">
+                                <span class="info-label">Alugado por:</span>
+                                <span class="info-value" data-field="usuario" th:text="${car.reservas[0].cliente.name}">N/A</span>
                             </div>
                             <div class="edit-actions">
                                 <button class="save-btn">

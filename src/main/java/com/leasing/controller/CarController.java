@@ -1,4 +1,4 @@
-package com.leasing.controllers;
+package com.leasing.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

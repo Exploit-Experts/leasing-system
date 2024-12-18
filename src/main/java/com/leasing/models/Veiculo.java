@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Data
 @Getter
 @Setter
@@ -25,4 +27,7 @@ public class Veiculo {
   private String cor;
   @Column(nullable = false)  
   private Boolean disponivel;
+
+  @OneToMany(mappedBy = "veiculo")
+  private List<Reserva> reservas;
 }
