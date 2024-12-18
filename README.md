@@ -31,6 +31,25 @@
 
 <br>
 
+## Roadmap
+- [] Implement the Language Toggle feature.
+
+<br>
+
+## Screenshots
+
+### Customer Portal
+
+![Customer Portal]()
+
+### Administrator Dashboard
+
+![Administrator Dashboard]()
+
+### Authentication
+
+![Authentication]()
+
 ## Installation
 
 ### Prerequisites
