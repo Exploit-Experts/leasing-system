@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import java.util.UUID;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -13,18 +11,17 @@ import java.util.List;
 @Entity
 @Table(name = "cliente")
 public class Cliente implements UserDetails {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(columnDefinition = "UUID")
-    private UUID id;
     
     @Column(nullable = false)
     private String name;
     
-    @Column(nullable = false, unique = true)
+    @Id
+    @Column(nullable = false)
     private String email;
+    
     @Column(nullable = false)
     private String password;
+    
     @Column(nullable = false)
     private String phone;
 

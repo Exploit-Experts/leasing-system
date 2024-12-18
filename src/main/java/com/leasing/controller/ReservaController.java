@@ -55,4 +55,21 @@ public class ReservaController {
         }
         return "Usuário não autenticado.";
     }
+
+    @PostMapping("/{id}/return")
+    public String returnVeiculo(@PathVariable Long id) {
+        Optional<Reserva> reservaOpt = reservaRepository.findById(id);
+        if (reservaOpt.isPresent()) {
+            Reserva reserva = reservaOpt.get();
+            
+            Veiculo veiculo = reserva.getVeiculo();
+            veiculo.setDisponivel(true);
+            veiculoRepository.save(veiculo);
+
+            reservaRepository.delete(reserva);
+            
+            return "Veículo devolvido com sucesso!";
+        }
+        return "Reserva não encontrada.";
+    }
 }

@@ -9,8 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
-
 @Controller
 public class AdminController {
 
@@ -20,11 +18,10 @@ public class AdminController {
     @Autowired
     private VehicleRepository vehicleRepository;
 
-    @DeleteMapping("/api/user/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable String id) {
+    @DeleteMapping("/api/user/{email}")
+    public ResponseEntity<?> deleteUser(@PathVariable String email) {
         try {
-            UUID uuid = UUID.fromString(id);
-            Cliente user = userRepository.findById(uuid)
+            Cliente user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
             if (!user.getReservas().isEmpty()) {
@@ -32,10 +29,8 @@ public class AdminController {
                     .body("Não é possível excluir usuário com reservas ativas");
             }
 
-            userRepository.deleteById(uuid);
+            userRepository.delete(user);
             return ResponseEntity.ok().build();
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body("ID inválido");
         } catch (Exception e) {
             return ResponseEntity.badRequest()
                 .body("Erro ao deletar usuário: " + e.getMessage());
