@@ -1,5 +1,6 @@
 <div align="center" text-align="center">
     <img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=gradient&text=LEASING%20SYSTEM&reversal=false">
+    <br>
     <strong>The Leasing System is a comprehensive platform designed to streamline the management of vehicle rentals. It offers a seamless experience for both customers and administrators, enabling efficient handling of vehicle reservations, user management, and rental agreements. The system is equipped with features such as secure authentication, dark mode, and language toggling to enhance user experience.</strong>
 </div>
 
@@ -38,17 +39,28 @@
 
 ## Screenshots
 
-### Customer Portal
+<details>
+<summary>Customer Portal</summary>
 
 ![Customer Portal](https://github.com/Exploit-Experts/leasing-system/blob/LS-20/images/customer-page.png?raw=true)
 
-### Administrator Dashboard
+</details>
+
+<details>
+<summary>Administrator Dashboard</summary>
 
 ![Administrator Dashboard](https://github.com/Exploit-Experts/leasing-system/blob/LS-20/images/admin-page.png?raw=true)
 
-### Authentication
+</details>
+
+<details>
+<summary>Authentication</summary>
 
 ![Authentication](https://github.com/Exploit-Experts/leasing-system/blob/LS-20/images/login-page.png?raw=true)
+
+</details>
+
+<br>
 
 ## Installation
 
