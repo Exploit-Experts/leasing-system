@@ -67,8 +67,6 @@ mvn clean package
 ```
 2. Deploy the generated WAR file to your server.
 
-<br>
-
 ### Testing
 Run the tests using Maven:
 ```sh
