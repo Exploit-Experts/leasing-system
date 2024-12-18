@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(205, 24, 24, 0.5)) no-repeat, url('../images/background.jpg');
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+body.dark-mode {
+  background: linear-gradient(45deg, rgba(34, 34, 34, 0.9), rgba(0, 0, 0, 0.9)) no-repeat, url('../images/background.jpg');
+  color: #f0f0f0;
+}
+
+.header-container {
+  background: rgba(255, 255, 255, 0.93);
+  padding: 0.7rem 2rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+body.dark-mode .header-container,
+body.dark-mode .user-control,
+body.dark-mode .car-control,
+body.dark-mode .user-list,
+body.dark-mode .car-list,
+body.dark-mode .add-car-form {
+  background: rgba(34, 34, 34, 0.9);
+  color: #f0f0f0;
+}
+
+.logo-name {
+  display: flex;
+  align-items: center;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.header-buttons button {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to left, #4776E6, #ab8edc);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .header-buttons button,
+body.dark-mode .edit-btn,
+body.dark-mode .delete-btn,
+body.dark-mode .add-btn,
+body.dark-mode .save-btn,
+body.dark-mode .cancel-btn {
+  background: linear-gradient(to left, #333, #555);
+}
+
+.header-buttons button:hover {
+  background: linear-gradient(to right, #4776E6, #8e54e9);
+}
+
+body.dark-mode .header-buttons button:hover,
+body.dark-mode .edit-btn:hover,
+body.dark-mode .delete-btn:hover,
+body.dark-mode .add-btn:hover,
+body.dark-mode .save-btn:hover,
+body.dark-mode .cancel-btn:hover {
+  background: linear-gradient(to right, #333, #555);
+}
+
+.logo-name h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.user-control,
+.car-control {
+  background: rgba(255, 255, 255, 0.93);
+  padding: 0.7rem 2rem;
+  margin-top: 1rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.user-control .header,
+.car-control .header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.user-control h1,
+.car-control h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.user-control p,
+.car-control p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: gray;
+}
+
+.user-control .user-list,
+.car-control .car-list {
+  background: rgba(255, 255, 255, 1);
+  padding: 0.7rem 2rem;
+  margin-top: 1rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.user-list .list-item,
+.car-list .list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.car-list .list-item {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+body.dark-mode .car-list .list-item {
+  background: rgba(34, 34, 34, 0.95);
+}
+
+body.dark-mode .car-list .form-row input {
+  background: #333;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.item-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100px;
+  text-align: center; 
+}
+
+.edit-btn {
+  background: linear-gradient(to left, #4776E6, #8e54e9);
+  color: white;
+}
+
+.delete-btn {
+  background: linear-gradient(to left, #ff4b4b, #ff416c);
+  color: white;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.empty-message {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+.empty-message p {
+  margin: 0;
+}
+
+.add-car-form {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-row input {
+  flex: 1 1 200px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.add-btn {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to left, #2ecc71, #27ae60);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Criar grupos de label-value */
+.info-label-group {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-right: 1rem;
+}
+
+.info-label,
+.info-value {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.info-label {
+  border-radius: 20px 0 0 20px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(to right, #4776E6, #8e54e9);
+}
+
+body.dark-mode .info-label {
+  background: linear-gradient(to right, #555, #777);
+}
+
+.info-value {
+  border-radius: 0 20px 20px 0;
+  background: #f0f0f0;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-left: none;
+  margin-left: -1px;
+  /* Para sobrepor levemente a borda */
+}
+
+body.dark-mode .info-value {
+  background: #444;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+.info-value.editing {
+  background: white;
+  border: 2px solid #4776E6;
+  padding: 0.2rem 0.7rem;
+  outline: none;
+  min-width: 100px;
+}
+
+body.dark-mode .info-value.editing {
+  background: #333;
+  border: 2px solid #555;
+}
+
+.edit-actions {
+  display: none;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.edit-actions.active {
+  display: flex;
+}
+
+.save-btn {
+  background: #2ecc71;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.cancel-btn {
+  background: #95a5a6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+button:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+button:active::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(100, 100);
+    opacity: 0;
+  }
+}
+
+.info-label.status-disponivel {
+  background: linear-gradient(to right, #27ae60, #2ecc71);
+}
+
+body.dark-mode .info-label.status-disponivel {
+  background: linear-gradient(to right, #27ae60, #2ecc71);
+}
+
+.info-label.status-indisponivel {
+  background: linear-gradient(to right, #c0392b, #e74c3c);
+}
+
+body.dark-mode .info-label.status-indisponivel {
+  background: linear-gradient(to right, #c0392b, #e74c3c);
+}

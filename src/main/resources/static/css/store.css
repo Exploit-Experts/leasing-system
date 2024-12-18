@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(205, 24, 24, 0.5)) no-repeat, url('../images/background.jpg');
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
+    margin: 0; 
+}
+
+body.dark-mode {
+    background: linear-gradient(45deg, rgba(34, 34, 34, 0.9), rgba(0, 0, 0, 0.6)) no-repeat, url('../images/background.jpg');
+    color: #f0f0f0;
+}
+
+.header-container {
+    background: rgba(255, 255, 255, 0.93);
+    padding: 0.7rem 2rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+body.dark-mode .header-container,
+body.dark-mode .rented-cars,
+body.dark-mode .available-cars,
+body.dark-mode .reservation-form,
+body.dark-mode .welcome-section {
+    background: rgba(34, 34, 34, 0.9);
+    color: #f0f0f0;
+}
+
+.logo-name {
+    display: flex;
+    align-items: center;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.header-buttons button {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to left, #4776E6, #ab8edc);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .header-buttons button,
+body.dark-mode .submit-btn {
+    background: linear-gradient(to left, #333, #555);
+}
+
+.header-buttons button:hover {
+    background: linear-gradient(to right, #4776E6, #8e54e9);
+}
+
+body.dark-mode .header-buttons button:hover,
+body.dark-mode .submit-btn:hover {
+    background: linear-gradient(to right, #333, #555);
+}
+
+.logo-name h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+main h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
+}
+
+.car-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+}
+
+.car-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+span.info-label{
+    background: linear-gradient(to right, #4776E6, #8e54e9) !important;
+    color: #ffffff !important;
+}
+
+.car-info p,
+.car-info .car-details span,
+.car-info .car-plate,
+.car-info .rental-period span {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    margin: 0.2rem 0;
+}
+
+.car-info .car-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+body.dark-mode .car-card{
+    background: linear-gradient(to right, #555, #777);
+}
+
+body.dark-mode .form-group input , body.dark-mode form-group label{
+    background: #333;
+    color: #f0f0f0;
+    border: 1px solid #555;
+}
+.info-label-group {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-right: 1rem;
+}
+
+.info-label,
+.info-value {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.info-label {
+    border-radius: 20px 0 0 20px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(to right, #4776E6, #8e54e9);
+}
+
+body.dark-mode .info-label {
+    background: linear-gradient(to right, #555, #777);
+}
+
+.info-value {
+    border-radius: 0 20px 20px 0;
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: none;
+    margin-left: -1px;
+}
+
+body.dark-mode .info-value {
+    background: #444;
+    color: #f0f0f0;
+    border: 1px solid #555;
+}
+
+.info-value.editing {
+    background: white;
+    border: 2px solid #4776E6;
+    padding: 0.2rem 0.7rem;
+    outline: none;
+    min-width: 100px;
+}
+
+.info-label.status-disponivel {
+    background: linear-gradient(to right, #27ae60, #2ecc71);
+}
+
+.info-label.status-indisponivel {
+    background: linear-gradient(to right, #c0392b, #e74c3c);
+}
+
+.rented-cars,
+.available-cars,
+.reservation-form,
+.welcome-section {
+    background: rgba(255, 255, 255, 0.93);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.rented-cars h2,
+.available-cars h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.rented-cars p,
+.available-cars p {
+    text-align: left;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-section {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    margin-top: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.welcome-section h1 {
+    color: white;
+}
+
+.welcome-section h1 span {
+    color: #ff416c;
+}
+
+.carousel-section {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel {
+    position: relative;
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .carousel-caption {
+    color: #f0f0f0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption h2,
+.carousel-caption p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+.carousel-control.prev { left: 1rem; }
+.carousel-control.next { right: 1rem; }
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group:first-child {
+    margin-top: 2.5rem;
+}
+
+.form-group label {
+    position: absolute;
+    left: 0.8rem;
+    top: -0.5rem;
+    background: white;
+    padding: 0 0.5rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.submit-btn {
+    background: linear-gradient(to left, #4776E6, #8e54e9);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(to right, #4776E6, #8e54e9);
+    transform: translateY(-2px);
+}
+
+.return-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: linear-gradient(to left, #e74c3c, #c0392b);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.return-btn:hover {
+    background: linear-gradient(to right, #e74c3c, #c0392b);
+    transform: translateY(-2px);
+}
+
+body.dark-mode .return-btn {
+    background: linear-gradient(to left, #c0392b, #922b21);
+}
+
+body.dark-mode .return-btn:hover {
+    background: linear-gradient(to right, #c0392b, #922b21);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.popup-content h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+body.dark-mode .popup-content {
+    background-color: #333;
+    color: #f0f0f0;
+    border: 1px solid #555;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.info-bubble {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.info-label {
+    background: linear-gradient(to right, #4776E6, #8e54e9);
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px 0 0 20px;
+    font-weight: 600;
+}
+
+body.dark-mode .info-label {
+    background: linear-gradient(to right, #555, #777);
+}
+
+.info-value {
+    background: #f0f0f0;
+    color: #333;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0 20px 20px 0;
+    border: 1px solid #e0e0e0;
+    border-left: none;
+    margin-left: -1px;
+}
+
+body.dark-mode .info-value {
+    background: #444;
+    color: #f0f0f0;
+    border: 1px solid #555;
+}
+
+.button-group {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-btn, .logout-btn, .github-btn {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+body.dark-mode .delete-btn {
+    background-color: #922b21;
+}
+
+.logout-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+body.dark-mode .logout-btn {
+    background-color: #2980b9;
+}
+
+.github-btn {
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+body.dark-mode .github-btn {
+    background-color: #555;
+}
+
+.github-btn:hover {
+    background-color: #555;
+}
+
+body.dark-mode .github-btn:hover {
+    background-color: #777;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.delete-btn, .logout-btn, .github-btn {
+    display: block;
+    width: 100%;
+    margin: 4px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.logout-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.github-btn {
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.github-btn:hover {
+    background-color: #555;
+}

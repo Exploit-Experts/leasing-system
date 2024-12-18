@@ -1,0 +1,136 @@
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leasing System - Sua loja de automóveis com os melhores preços">
+    <title>Leasing Sys - Admin</title>
+    <script src="/js/admin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="logo-name">
+            <h1>Leasing System</h1>
+        </div>
+        <div class="header-buttons">
+            <button id="dark-mode-toggle"><i class="bi bi-moon"></i> Dark Mode</button>
+            <button id="language-toggle"><i class="bi bi-translate"></i> Language</button>
+            <a href="/"><button id="return" style="background: linear-gradient(to left, #ff4b4b, #ff416c);"><i class="bi bi-box-arrow-left"></i> Exit</button></a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="user-control">
+            <div class="header">
+                <h1>User Control</h1>
+                <p>Manage users here.</p>
+            </div>
+            <div class="user-list">
+                <div th:if="${#lists.isEmpty(users)}" class="empty-message">
+                    <p>No users found</p>
+                </div>
+                <div class="error-message" id="user-delete-error" style="display: none;">
+                    <p>Error deleting user. Please try again.</p>
+                </div>
+                <div class="error-message" id="user-reservation-error" style="display: none;">
+                    <p>Cannot delete user. User has active reservations.</p>
+                </div>
+                <div class="list-item" th:if="${!#lists.isEmpty(users)}" th:each="user : ${users}">
+                    <div class="item-info">
+                        <h3 th:text="${user.name}">User Name</h3>
+                        <p th:text="${user.email}">user@email.com</p>
+                    </div>
+                    <div class="item-actions">
+                        <button class="delete-btn" th:data-id="${user.email}">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-control">
+            <div class="header">
+                <h1>Car Control</h1>
+                <p>Manage cars here.</p>
+            </div>
+            <div class="car-list">
+                <form class="add-car-form" id="addCarForm">
+                    <div class="form-row">
+                        
+                        <input type="text" name="modelo" placeholder="Modelo" required>
+                        <input type="text" name="marca" placeholder="Marca" required>
+                        <input type="number" name="ano" placeholder="Ano" required>
+                        <input type="text" name="placa" placeholder="Placa" required>
+                        <input type="text" name="cor" placeholder="Cor" required>
+                        <button type="submit" class="add-btn">
+                            <i class="bi bi-plus-circle"></i> Adicionar
+                        </button>
+                    </div>
+                </form>
+                <div th:if="${#lists.isEmpty(cars)}" class="empty-message" style="margin-top: 0.5rem;">
+                    <p>No cars found</p>
+                </div>
+                <div class="error-message" id="car-delete-error" style="display: none;">
+                    <p>Error deleting car. Please try again.</p>
+                </div>
+                <div class="error-message" id="car-reservation-error" style="display: none;">
+                    <p>Cannot delete car. Car has active reservations.</p>
+                </div>
+                <div class="list-item" th:if="${!#lists.isEmpty(cars)}" th:each="car : ${cars}" >
+                    <div class="item-info">
+                        <div class="info-row" th:data-car-id="${car.id}">
+                            <div class="info-label-group">
+                                <span class="info-label">Modelo:</span>
+                                <span class="info-value" data-field="modelo" th:text="${car.modelo}">Car Model</span>
+                            </div>
+                            <div class="info-label-group">
+                                <span class="info-label">Marca:</span>
+                                <span class="info-value" data-field="marca" th:text="${car.marca}">Brand</span>
+                            </div>
+                            <div class="info-label-group">
+                                <span class="info-label">Ano:</span>
+                                <span class="info-value" data-field="ano" th:text="${car.ano}">Year</span>
+                            </div>
+                            <div class="info-label-group">
+                                <span class="info-label">Placa:</span>
+                                <span class="info-value" data-field="placa" th:text="${car.placa}">Plate</span>
+                            </div>
+                            <div class="info-label-group">
+                                <span class="info-label">Cor:</span>
+                                <span class="info-value" data-field="cor" th:text="${car.cor}">Color</span>
+                            </div>
+                            <div class="info-label-group">
+                                <span class="info-label" th:classappend="${car.disponivel ? 'status-disponivel' : 'status-indisponivel'}">Status:</span>
+                                <span class="info-value" data-field="disponivel" th:text="${car.disponivel ? 'Disponível' : 'Indisponível'}">Status</span>
+                            </div>
+                            <div class="info-label-group" th:if="${!car.disponivel}">
+                                <span class="info-label">Alugado por:</span>
+                                <span class="info-value" data-field="usuario" th:text="${car.reservas[0].cliente.name}">N/A</span>
+                            </div>
+                            <div class="edit-actions">
+                                <button class="save-btn">
+                                    <i class="bi bi-check"></i> Salvar
+                                </button>
+                                <button class="cancel-btn">
+                                    <i class="bi bi-x"></i> Cancelar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-actions">
+                        <button class="edit-btn" th:data-id="${car.id}">
+                            <i class="bi bi-pencil"></i> Edit
+                        </button>
+                        <button class="delete-btn" th:data-id="${car.id}">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
