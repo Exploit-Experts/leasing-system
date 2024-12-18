@@ -7,15 +7,15 @@
 
 <p align="center">
    <a href="https://img.shields.io/github/repo-size/brunoliratm/leasing-system">
-         <img src="https://img.shields.io/github/repo-size/brunoliratm/leasing-system" alt="size-repo"></a>
-    <a href="https://github.com/brunoliratm/leasing-system/issues">
-        <img src="https://img.shields.io/github/issues/brunoliratm/leasing-system" alt="Issues">
+         <img src="https://img.shields.io/github/repo-size/Exploit-Experts/leasing-system" alt="size-repo"></a>
+    <a href="https://github.com/Exploit-Experts/leasing-system/issues">
+        <img src="https://img.shields.io/github/issues/Exploit-Experts/leasing-system" alt="Issues">
     </a>
-    <a href="https://github.com/brunoliratm/leasing-system/pulls">
-        <img src="https://img.shields.io/github/issues-pr/brunoliratm/leasing-system" alt="Pull Requests">
+    <a href="https://github.com/Exploit-Experts/leasing-system/pulls">
+        <img src="https://img.shields.io/github/issues-pr/Exploit-Experts/leasing-system" alt="Pull Requests">
     </a>
-    <a href="https://github.com/brunoliratm/leasing-system/blob/main/LICENSE">
-        <img src="https://img.shields.io/github/license/brunoliratm/leasing-system" alt="License">
+    <a href="https://github.com/Exploit-Experts/leasing-system/blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/Exploit-Experts/leasing-system" alt="License">
     </a>
 </p>
 
